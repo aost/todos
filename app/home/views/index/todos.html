@@ -1,0 +1,43 @@
+<:title>
+Todos
+</:title>
+
+<:body>
+  <div class="row">
+    <div class="col-md-4">
+      <h1>{_todos.or([]).size} Todos</h1>
+  
+      <table class="table" style="width: auto;">
+        <tr>
+          <td><input type="checkbox" checked="{page._all_completed}" /></td>
+          <td class="{#if page._all_completed}completed{/}">Mark All</td>
+          <td></td>
+        </tr>
+    
+        {#each _todos as todo}
+          <tr e-click="set_index(index)" class="{#if params._index.to_i == index}selected{/}">
+            <td><input type="checkbox" checked="{todo._completed}" /></td>
+            <td class="{#if todo._completed}completed{/}"><:editable-text value="{todo._label}" /></td>
+            <td><button e-click="remove_todo(index)">X</button>
+          </tr>
+        {/}
+      </table>
+  
+      <form e-submit="add_todo">
+        <div class="form-group">
+           <label>Add Todo:</label>
+           <input class="form-control" type="text" value="{page._new_todos._label}" />
+        </div>
+      </form>
+    </div>
+    
+    <div class="col-md-8">
+      {#if _current_todo}
+        <h1>{_current_todo._label}</h1>
+        
+        <textarea class="form-control" rows="5">{_current_todo._description}</textarea>
+      {/}
+      
+    </div>
+  </div>
+</:body>

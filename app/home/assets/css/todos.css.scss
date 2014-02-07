@@ -1,0 +1,9 @@
+.completed {
+  text-decoration: line-through;
+  color: #CCCCCC;
+}
+
+tr.selected td {
+  background-color: #428bca;
+  color: #FFFFFF;
+}
