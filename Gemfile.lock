@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/kacperk/sockjs-ruby.git
-  revision: 66e566c51ba60d7b1421b67d2b86f4c389741600
+  revision: 72f715fb3173c44f0ce28a884c62670e6424dbef
   specs:
-    sockjs (0.3.4.3)
+    sockjs (0.3.4.4)
       faye-websocket (~> 0.7.1)
       json
       rack
@@ -12,14 +12,14 @@ GIT
 
 GIT
   remote: https://github.com/opal/opal-jquery.git
-  revision: eab45e24ed1128721395d38d7d4b9e84c4427c00
+  revision: 1814202085f168176231b877b2b7a967b75b0726
   specs:
     opal-jquery (0.1.2)
       opal (>= 0.5.0, < 1.0.0)
 
 GIT
   remote: https://github.com/opal/opal.git
-  revision: d21fba043e27174491276996003cea1df481cb03
+  revision: cbca29d6cb9b11bc788113f6663512f3b00c1805
   specs:
     opal (0.6.0)
       source_map
@@ -55,7 +55,7 @@ GEM
     multi_json (1.8.4)
     nokogiri (1.6.1)
       mini_portile (~> 0.5.0)
-    oj (2.5.4)
+    oj (2.5.5)
     pry (0.9.12.6)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -102,7 +102,7 @@ GEM
     uglifier (2.4.0)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
-    volt (0.6.3)
+    volt (0.7.0)
       bson_ext (~> 1.9.0)
       listen (~> 2.4.0)
       mongo (~> 1.9.0)
@@ -120,8 +120,8 @@ GEM
       uglifier (~> 2.4.0)
       yui-compressor (~> 0.12.0)
     volt-bootstrap (0.0.3)
-    volt-bootstrap-jumbotron-theme (0.0.1)
-    volt-editable-text (0.0.1)
+    volt-bootstrap-jumbotron-theme (0.0.2)
+    volt-editable-text (0.0.2)
     websocket-driver (0.3.2)
     yui-compressor (0.12.0)
 
