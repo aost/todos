@@ -1,8 +1,7 @@
-<:title>
-Todos
-</:title>
+<:Title>
+  Todos
 
-<:body>
+<:Body>
   <div class="row">
     <div class="col-md-4">
       <h1>{_todos.or([]).size} Todos</h1>
@@ -23,7 +22,7 @@ Todos
         {/}
       </table>
   
-      <form e-submit="add_todo">
+      <form e-submit="add_todo" onsubmit="return false;">
         <div class="form-group">
            <label>Add Todo:</label>
            <input class="form-control" type="text" value="{page._new_todos._label}" />
@@ -35,9 +34,7 @@ Todos
       {#if _current_todo}
         <h1>{_current_todo._label}</h1>
         
-        <textarea class="form-control" rows="5">{_current_todo._description}</textarea>
       {/}
       
     </div>
   </div>
-</:body>

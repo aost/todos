@@ -11,9 +11,12 @@ class IndexController < ModelController
     page._all_completed.on('changed') do
       set_all(page._all_completed.cur)
     end
+    
+    page._todos << {_label: 'Yep'}
   end
   
   def add_todo
+    puts "ADD TODO"
     flash._notices << "todo '#{page._new_todos._label.to_s}' added"
 
     self._todos << page._new_todos.to_h.cur
