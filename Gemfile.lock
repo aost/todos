@@ -28,7 +28,7 @@ GIT
 PATH
   remote: /Users/ryanstout/Sites/volt/volt
   specs:
-    volt (0.7.0)
+    volt (0.7.1)
       bson_ext (~> 1.9.0)
       listen (~> 2.4.0)
       mongo (~> 1.9.0)

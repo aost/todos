@@ -1,10 +1,11 @@
 class IndexController < ModelController
   # Change to :store and run mongod to store
   # model self.local_store
+  model :store
 
   def initialize
     super
-    @model = $page.local_store
+    # @model = $page.local_store
 
     page._current_todo = _todos[params._index.to_i]
 
