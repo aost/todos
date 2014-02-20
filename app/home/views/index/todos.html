@@ -5,14 +5,14 @@
   <div class="row">
     <div class="col-md-4">
       <h1>{_todos.or([]).size} Todos</h1>
-  
+
       <table class="table" style="width: auto;">
         <tr>
           <td><input type="checkbox" checked="{page._all_completed}" /></td>
           <td class="{#if page._all_completed}completed{/}">Mark All</td>
           <td></td>
         </tr>
-    
+
         {#each _todos as todo}
           <tr e-click="set_index(index)" class="{#if params._index.to_i == index}selected{/}">
             <td><input type="checkbox" checked="{todo._completed}" /></td>
@@ -21,7 +21,7 @@
           </tr>
         {/}
       </table>
-  
+
       <form e-submit="add_todo" onsubmit="return false;">
         <div class="form-group">
            <label>Add Todo:</label>
@@ -29,12 +29,12 @@
         </div>
       </form>
     </div>
-    
+
     <div class="col-md-8">
-      {#if _current_todo}
-        <h1>{_current_todo._label}</h1>
-        
+      {#if page._current_todo}
+        <h1>{page._current_todo._label}</h1>
+
       {/}
-      
+
     </div>
   </div>
