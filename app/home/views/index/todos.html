@@ -4,7 +4,7 @@
 <:Body>
   <div class="row">
     <div class="col-md-4">
-      <h1>{_todos.or([]).size} Todos</h1>
+      <h1>{_todos.or([]).size} Todos - {completed}</h1>
 
       <table class="table" style="width: auto;">
         <tr>
@@ -34,7 +34,13 @@
       {#if page._current_todo}
         <h1>{page._current_todo._label}</h1>
 
+        <textarea>{page._current_todo._description}</textarea>
       {/}
 
     </div>
   </div>
+
+  <input type="checkbox" checked="{page._look_for}" />
+  {#if page._look_for}
+  YEP
+  {/}

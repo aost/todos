@@ -3,8 +3,7 @@ class IndexController < ModelController
   # model self.local_store
   model :store
 
-  def initialize
-    super
+  def todos
     # @model = $page.local_store
 
     page._current_todo = _todos[params._index.to_i]
@@ -15,14 +14,25 @@ class IndexController < ModelController
     end
 
     # page._todos << {_label: 'Yep'}
+    page._look_for = true
+  end
 
-    params._index.on('changed') { puts "INDEX CHANGED" }
-    page._current_tood.on('changed') { puts "TCD changed" }
+  def escape(html)
+    puts html.inspect
+
+    html.gsub('<', '&lt;').gsub('>', '&gt;')
+  end
+
+  def completed
+    _todos.count do |v|
+      v._completed
+      # v._completed.or(false) == page._look_for
+    end
   end
 
   def add_todo
     puts "ADD TODO"
-    flash._notices << "todo '#{page._new_todos._label.to_s}' added"
+    # flash._notices << "todo '#{page._new_todos._label.to_s}' added"
 
     self._todos << page._new_todos.to_h.cur
     page._new_todos = {}

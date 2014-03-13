@@ -1,5 +1,5 @@
-get "/about", _view: 'about'
-get "/todos", _view: 'todos'
+get "/about", _controller: 'about'
+get "/todos", _controller: 'todos'
 
 # The main route
 get '/'
