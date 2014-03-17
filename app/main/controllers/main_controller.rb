@@ -1,4 +1,4 @@
-class IndexController < ModelController
+class MainController < ModelController
   # Change to :store and run mongod to store
   # model self.local_store
   model :store
