@@ -4,43 +4,38 @@
 <:Body>
   <div class="row">
     <div class="col-md-4">
-      <h1>{_todos.or([]).size} Todos - {completed}</h1>
+      <h1>{store._items.or([]).size} Todos</h1>
 
       <table class="table" style="width: auto;">
         <tr>
-          <td><input type="checkbox" checked="{page._all_completed}" /></td>
-          <td class="{#if page._all_completed}completed{/}">Mark All</td>
-          <td></td>
+          <td><input type="checkbox" e-click="mark_all" checked="{_all_completed}"  /></td>
+          <td class="{#if _all_completed}completed{/}">Mark All</td>
         </tr>
 
-        {#each _todos as todo}
-          <tr e-click="set_index(index)" class="{#if params._index.to_i == index}selected{/}">
-            <td><input type="checkbox" checked="{todo._completed}" /></td>
-            <td class="{#if todo._completed}completed{/}"><:editable-text value="{todo._label}" /></td>
-            <td><button e-click="remove_todo(index)">X</button>
+        {#each store._items as item}
+          <tr
+            class="{#if params._index == index}selected{/}"
+            e-click="params._index = index">
+            <td><input type="checkbox" checked="{item._complete}" /></td>
+            <td class="{#if item._complete}complete{/}"><:editable-text value="{item._label}" /></td>
+            <td><button e-click="store._items.delete(item)">X</button></td>
           </tr>
         {/}
       </table>
 
-      <form e-submit="add_todo">
+
+      <form e-submit="add_item" role="form">
         <div class="form-group">
            <label>Add Todo:</label>
-           <input class="form-control" type="text" value="{page._new_todos._label}" />
+           <input class="form-control" type="text" value="{_new_todos._label}" />
         </div>
+
       </form>
     </div>
 
     <div class="col-md-8">
-      {#if page._current_todo}
-        <h1>{page._current_todo._label}</h1>
+      <h2>{_current_todo._label}</h2>
 
-        <textarea>{page._current_todo._description}</textarea>
-      {/}
-
+      <textarea>{_current_todo._description}</textarea>
     </div>
   </div>
-
-  <input type="checkbox" checked="{page._look_for}" />
-  {#if page._look_for}
-  YEP
-  {/}
