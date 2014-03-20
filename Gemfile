@@ -1,9 +1,9 @@
 source 'https://rubygems.org'
 
-gem 'volt', path: '/Users/ryanstout/Sites/volt/volt'
+gem 'volt', github: 'voltrb/volt'
 
 
-# The following gem's are optional for themeing
+# The following gems are optional for themeing
 
 # Twitter bootstrap
 gem 'volt-bootstrap'
